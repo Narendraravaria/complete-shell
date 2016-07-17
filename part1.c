@@ -121,7 +121,7 @@ int main()
 	 				j++;
 	 			}	
 	 			i++;
-	 		}
+	 		}// WHILE END
 
 	 		if (cmd_flag == 1) 	// FOR LAST WORD
 	 		{
@@ -131,7 +131,7 @@ int main()
 	 		}
 	 	}
 
-	 	// Command without PIPE and REDIRECTIOn 
+	 	// Command without PIPE and REDIRECTION
 	 	if (redir_flag != 1 && pipe_flag != 1)
 	 	{
 	 		n_size = 0;
@@ -168,7 +168,7 @@ int main()
 			if(wait(&status) != pid)
 				printf("wait error\n");
 			pr_exit_status(status);
-		}// IF END
+		}// FORK IF END
 
 		//READY TO RECEIVE NEXT SHELL COMMAND.....		
 		printf("$ ");

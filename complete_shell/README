@@ -1,0 +1,13 @@
+Shell implementation using system calls (fork, exec, dup/dup2, wait, exit) supporting following features
+    - File Redirection. >, <, >> with a single command
+	    ls > output.txt
+	    ls >> output.txt
+	    sort < output.txt
+    - Pipes
+	    ls -l | wc -l
+    - Pipes and file redirection together
+	    ls | head | sort | wc
+	    ls -sF | sort | wc –l > out.txt
+    - Single handling:
+	    When the command is "exit", then the program (shell) will terminate
+	    When a child process is running and the parent-process is waiting (for example, the command is "sleep 100" to make a child process to sleep 100 second), you press Cntl+Z. The waiting parent's signal handler will get the signal and to terminate the sleeping child process, and the parent process to check whether the child process is terminated, and then the parent process (shell) will prompt for next command to be processed.
